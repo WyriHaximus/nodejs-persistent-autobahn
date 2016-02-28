@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "pretest": "eslint ./client/src/ --ext .js --ext .jsx && jscs ./client/src/",
+    "pretest": "jshint ./client/src && eslint ./client/src/ --ext .js --ext .jsx && jscs ./client/src/",
     "test": "mocha --compilers js:babel-core/register client/tests/"
   },
   "dependencies": {
