@@ -2,7 +2,7 @@
   "esnext": true,
   "preset": "google",
 
-  "fileExtensions": [".js", ".jsx"],
+  "fileExtensions": [".js"],
 
   "requireCurlyBraces": true,
   "requireParenthesesAroundIIFE": true,
