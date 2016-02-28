@@ -10,42 +10,37 @@ let setUpConnection = (configOrConnection) => {
     return configOrConnection;
 };
 
-export class PersistentAutobahn
-{
-    constructor(configOrConnection)
-    {
+export class PersistentAutobahn  {
+    constructor(configOrConnection)  {
         this.queuedCalls   = new Deque();
         this.subscriptions = new Deque();
         this.open          = false;
         this.connected     = false;
         this.connection    = setUpConnection(configOrConnection);
 
-        this.connection.onopen = function (session) {
+        this.connection.onopen = function(session) {
             this.connected = true;
             this.session = session;
 
-            this.queuedCalls.forEach(function (deferred) {
-                deferred.resolve()
+            this.queuedCalls.forEach(function(deferred) {
+                deferred.resolve();
             });
         }.bind(this);
 
-        this.connection.onclose = function () {
+        this.connection.onclose = function() {
             this.connected = false;
         }.bind(this);
     }
 
-    isOpen()
-    {
+    isOpen() {
         return this.open;
     }
 
-    isConnected()
-    {
+    isConnected() {
         return this.connected;
     }
 
-    connect()
-    {
+    connect() {
         if (this.open == true) {
             return;
         }
@@ -53,8 +48,7 @@ export class PersistentAutobahn
         this.open = true;
     }
 
-    rpc(target, args = [])
-    {
+    rpc(target, args = []) {
         this.connect();
 
         if (this.connected) {
@@ -74,8 +68,7 @@ export class PersistentAutobahn
         }));
     }
 
-    subscribe(target, callback, options = [])
-    {
+    subscribe(target, callback, options = []) {
         this.connect();
 
         //
