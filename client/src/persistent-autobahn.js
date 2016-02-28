@@ -41,7 +41,7 @@ export class PersistentAutobahn  {
     }
 
     connect() {
-        if (this.open == true) {
+        if (this.open === true) {
             return;
         }
         this.connection.open();
