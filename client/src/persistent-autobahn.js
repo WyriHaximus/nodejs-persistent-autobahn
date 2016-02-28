@@ -71,11 +71,21 @@ export class PersistentAutobahn  {
     subscribe(target, callback, options = []) {
         this.connect();
 
-        //
-
         if (this.connected) {
             return this.session.subscribe(target, callback, options);
         }
 
+        let deferred = when.defer();
+
+        this.queuedCalls.push(deferred);
+
+        return deferred.promise.then(function() {
+            return this.client.subscribe(this.target, this.callback, this.options);
+        }.bind({
+            client:   this,
+            target:   target,
+            callback: callback,
+            options:  options,
+        }));
     }
 }
