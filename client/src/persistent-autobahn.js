@@ -70,7 +70,7 @@ export class PersistentAutobahn
         }.bind({
             client: this,
             target: target,
-            args:   args
+            args:   args,
         }));
     }
 
