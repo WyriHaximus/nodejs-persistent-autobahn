@@ -10,7 +10,7 @@ let setUpConnection = (configOrConnection) => {
     return configOrConnection;
 };
 
-export class RatchetClient
+export class PersistentAutobahn
 {
     constructor(configOrConnection)
     {
@@ -70,7 +70,7 @@ export class RatchetClient
         }.bind({
             client: this,
             target: target,
-            args:   args,
+            args:   args
         }));
     }
 
@@ -81,7 +81,7 @@ export class RatchetClient
         //
 
         if (this.connected) {
-            return this.session.subscribe(target, callback);
+            return this.session.subscribe(target, callback, options);
         }
 
     }

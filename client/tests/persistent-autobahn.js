@@ -1,7 +1,7 @@
 var sinon = require('sinon');
 var expect = require('chai').expect;
 var Promise = require('when').Promise;
-var client = require('../src/ratchet-client').RatchetClient;
+var persistentAutobahn = require('../src/persistent-autobahn').PersistentAutobahn;
 var autobahnConnection = require('autobahn').Connection;
 
 describe('WAMPv2 autobahn persistent client', function() {
@@ -9,14 +9,14 @@ describe('WAMPv2 autobahn persistent client', function() {
         it('sets onopen', function() {
             var connection = sinon.mock(autobahnConnection);
             expect(connection.onopen).to.be.undefined;
-            new client(connection);
+            new persistentAutobahn(connection);
             expect(connection.onopen).to.be.an.instanceof(Function);
         });
 
         it('sets onclose', function() {
             var connection = sinon.mock(autobahnConnection);
             expect(connection.onclose).to.be.undefined;
-            new client(connection);
+            new persistentAutobahn(connection);
             expect(connection.onclose).to.be.an.instanceof(Function);
         });
 
@@ -24,7 +24,7 @@ describe('WAMPv2 autobahn persistent client', function() {
             var connection = {
                 open: function () {}
             };
-            var clientInstance = new client(connection);
+            var clientInstance = new persistentAutobahn(connection);
 
             expect(clientInstance.isOpen()).to.be.false;
             expect(clientInstance.isConnected()).to.be.false;
@@ -41,7 +41,7 @@ describe('WAMPv2 autobahn persistent client', function() {
             var connection = {
                 open: function () {}
             };
-            var clientInstance = new client(connection);
+            var clientInstance = new persistentAutobahn(connection);
 
             expect(clientInstance.isOpen()).to.be.false;
             expect(clientInstance.isConnected()).to.be.false;
@@ -66,7 +66,7 @@ describe('WAMPv2 autobahn persistent client', function() {
             var connection = {
                 open: callback
             };
-            var clientInstance = new client(connection);
+            var clientInstance = new persistentAutobahn(connection);
 
             expect(clientInstance.isOpen()).to.be.false;
             expect(clientInstance.isConnected()).to.be.false;
@@ -84,7 +84,7 @@ describe('WAMPv2 autobahn persistent client', function() {
             var connection = {
                 open: function () {}
             };
-            var clientInstance = new client(connection);
+            var clientInstance = new persistentAutobahn(connection);
 
             var promise = clientInstance.rpc('foo', [
                 'bar',
