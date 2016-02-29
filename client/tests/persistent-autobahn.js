@@ -81,8 +81,9 @@ describe('WAMPv2 autobahn persistent client', function() {
 
     describe('RPC', function() {
         it('call', function() {
+            var callback = sinon.spy();
             var connection = {
-                open: function () {}
+                open: callback
             };
             var clientInstance = new persistentAutobahn(connection);
 
@@ -92,8 +93,7 @@ describe('WAMPv2 autobahn persistent client', function() {
             ]);
 
             expect(promise).to.be.instanceof(Promise);
-
-            clientInstance.connect();
+            expect(callback.called).to.be.true;
         });
     });
 });
