@@ -4,8 +4,8 @@
   "author": "Cees-Jan Kiewiet <ceesjank@gmail.com> (https://wyrihaximus.net)",
   "license": "MIT",
   "scripts": {
-    "pretest": "jshint ./client/src && eslint ./client/src/ --ext .js --ext .jsx && jscs ./client/src/",
-    "test": "mocha --compilers js:babel-core/register client/tests/"
+    "pretest": "jshint ./index.js && eslint ./index.js && jscs ./index.js",
+    "test": "mocha --compilers js:babel-core/register ./tests.js"
   },
   "dependencies": {
     "autobahn": "~0.9.9",

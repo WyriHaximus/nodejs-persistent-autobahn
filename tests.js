@@ -1,7 +1,7 @@
 var sinon = require('sinon');
 var expect = require('chai').expect;
 var Promise = require('when').Promise;
-var persistentAutobahn = require('../src/persistent-autobahn').PersistentAutobahn;
+var persistentAutobahn = require('./index').PersistentAutobahn;
 var autobahnConnection = require('autobahn').Connection;
 
 describe('WAMPv2 autobahn persistent client', function() {
