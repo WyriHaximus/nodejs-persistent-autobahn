@@ -80,7 +80,7 @@ describe('WAMPv2 autobahn persistent client', function() {
     });
 
     describe('RPC', function() {
-        it('sdadsa', function() {
+        it('call', function() {
             var connection = {
                 open: function () {}
             };
