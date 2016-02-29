@@ -2,6 +2,7 @@
   "name": "wyrihaximus/persisten-autobahn",
   "description": "Persistent wrapper around autobahn",
   "author": "Cees-Jan Kiewiet <ceesjank@gmail.com> (https://wyrihaximus.net)",
+  "license": "MIT",
   "scripts": {
     "pretest": "jshint ./client/src && eslint ./client/src/ --ext .js --ext .jsx && jscs ./client/src/",
     "test": "mocha --compilers js:babel-core/register client/tests/"
