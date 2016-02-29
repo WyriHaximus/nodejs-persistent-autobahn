@@ -1,5 +1,5 @@
 {
-  "name": "persisten-autobahn",
+  "name": "persistent-autobahn",
   "description": "Persistent wrapper around autobahn",
   "author": "Cees-Jan Kiewiet <ceesjank@gmail.com> (https://wyrihaximus.net)",
   "license": "MIT",
