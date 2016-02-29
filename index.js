@@ -10,7 +10,7 @@ let setUpConnection = (configOrConnection) => {
     return configOrConnection;
 };
 
-export default class PersistentAutobahn  {
+export class PersistentAutobahn  {
     constructor(configOrConnection)  {
         this.queuedCalls   = new Deque();
         this.subscriptions = new Deque();
@@ -89,3 +89,5 @@ export default class PersistentAutobahn  {
         }));
     }
 }
+
+export default PersistentAutobahn;
