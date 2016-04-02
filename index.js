@@ -1,5 +1,6 @@
 import autobahn from 'autobahn';
 import Deque from 'collections/deque';
+import List from 'collections/list';
 import when from 'when';
 
 let setUpConnection = (configOrConnection) => {
@@ -13,7 +14,7 @@ let setUpConnection = (configOrConnection) => {
 export class PersistentAutobahn  {
     constructor(configOrConnection)  {
         this.queuedCalls   = new Deque();
-        this.subscriptions = new Deque();
+        this.subscriptions = new List();
         this.open          = false;
         this.connected     = false;
         this.connection    = setUpConnection(configOrConnection);
