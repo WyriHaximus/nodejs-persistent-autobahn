@@ -1,3 +1,5 @@
+publish-major: patch publish
+publish-minor: patch publish
 publish-patch: patch publish
 
 major:
