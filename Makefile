@@ -1,5 +1,8 @@
 publish-patch: patch publish
 
+minor:
+	npm version minor
+
 patch:
 	npm version patch
 
