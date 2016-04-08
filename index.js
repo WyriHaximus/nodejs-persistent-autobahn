@@ -16,7 +16,6 @@ let setUpConnection = (configOrConnection) => {
 export class PersistentAutobahn  {
     constructor(configOrConnection)  {
         this.queuedCalls     = new Deque();
-        this.subscriptions   = new List();
         this.subscriptionMap = new Map();
         this.open            = false;
         this.connected       = false;
