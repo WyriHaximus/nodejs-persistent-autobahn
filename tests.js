@@ -3,6 +3,7 @@ var expect = require('chai').expect;
 var Promise = require('when').Promise;
 var persistentAutobahn = require('./index').PersistentAutobahn;
 var autobahnConnection = require('autobahn').Connection;
+var when = require('when');
 
 describe('WAMPv2 autobahn persistent client', function() {
     describe('connection state changes', function() {
@@ -94,6 +95,39 @@ describe('WAMPv2 autobahn persistent client', function() {
 
             expect(promise).to.be.instanceof(Promise);
             expect(callback.called).to.be.true;
+        });
+    });
+
+    describe('PUB/SUB', function() {
+        it('subscribe', function(done) {
+            var deferred = when.defer();
+            var callbackSubscription = sinon.spy();
+            var callbackSubscribe = sinon.spy(function () {
+                return this.deferred.promise;
+            }.bind({
+                deferred: deferred,
+            }));
+            var connection = {
+                open: function () {}
+            };
+            var session = {
+                subscribe: callbackSubscribe
+            };
+
+            var clientInstance = new persistentAutobahn(connection);
+            clientInstance.connect();
+            connection.onopen(session);
+
+            var promise = clientInstance.subscribe('foo', callbackSubscription);
+            promise.done(function (subId) {
+                expect(subId).to.be.string;
+                done();
+            });
+            deferred.resolve({a: 'b'});
+
+            expect(promise).to.be.instanceof(Promise);
+            expect(callbackSubscription.called).to.be.false;
+            expect(callbackSubscribe.called).to.be.true;
         });
     });
 });
