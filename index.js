@@ -1,6 +1,5 @@
 import autobahn from 'autobahn';
 import Deque from 'collections/deque';
-import List from 'collections/list';
 import Map from 'collections/map';
 import when from 'when';
 import Random from 'random-js';
