@@ -129,5 +129,34 @@ describe('WAMPv2 autobahn persistent client', function() {
             expect(callbackSubscription.called).to.be.false;
             expect(callbackSubscribe.called).to.be.true;
         });
+
+        it('ubsubscribe', function (done) {
+            var deferred = when.defer();
+            var callbackSubscription = sinon.spy();
+            var callbackSubscribe = sinon.spy(function () {
+                return this.deferred.promise;
+            }.bind({
+                deferred: deferred,
+            }));
+            var connection = {
+                open: function () {}
+            };
+            var session = {
+                unsubscribe: callbackSubscribe
+            };
+
+            var clientInstance = new persistentAutobahn(connection);
+            clientInstance.connect();
+            connection.onopen(session);
+
+            var promise = clientInstance.unsubscribe('foo', callbackSubscription);
+            promise.done(function (subId) {
+                expect(subId).to.be.string;
+                done();
+            });
+            deferred.resolve({a: 'b'});
+
+            expect(promise).to.be.instanceof(Promise);
+        });
     });
 });

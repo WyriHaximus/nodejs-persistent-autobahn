@@ -111,6 +111,25 @@ export class PersistentAutobahn  {
             options:  options,
         }));
     }
+
+    unsubscribe(subId) {
+        let subscription = this.subscriptionMap.get(subId);
+        this.subscriptionMap.delete(subId);
+
+        if (this.connected) {
+            return this.session.unsubscribe(subscription);
+        }
+
+        let deferred = when.defer();
+        this.queuedCalls.push(deferred);
+
+        return deferred.promise.then(function() {
+            this.client.unsubscribe(this.subscription);
+        }.bind({
+            client:       this,
+            subscription: subscription,
+        }));
+    }
 }
 
 export default PersistentAutobahn;
