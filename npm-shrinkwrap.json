@@ -1,6 +1,6 @@
 {
   "name": "persistent-autobahn",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "dependencies": {
     "Base64": {
       "version": "0.2.1",
