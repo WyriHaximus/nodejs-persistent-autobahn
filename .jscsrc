@@ -1,5 +1,4 @@
 {
-  "esnext": true,
   "preset": "google",
 
   "fileExtensions": [".js"],
