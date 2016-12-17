@@ -1,0 +1,7 @@
+linters:
+    jscs:
+        config: './.jscsrc'
+    jshint:
+        config: './.jshintrc'
+    eslint:
+        config: './.eslintrc'
