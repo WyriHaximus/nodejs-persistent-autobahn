@@ -11,7 +11,7 @@
     "autobahn": "~0.9.9",
     "collections": "~5.0.1",
     "random-js": "^1.0.8",
-    "when": "~3.7.3"
+    "when": "~3.7.8"
   },
   "devDependencies": {
     "babel-core": "^6.0.16",
