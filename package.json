@@ -28,7 +28,7 @@
     "json-loader": "^0.5.4",
     "mocha": "~2.5.1",
     "sinon": "~1.17.3",
-    "webpack": "^1.12.2"
+    "webpack": "^2.5.0"
   },
   "main": "index.js",
   "version": "0.1.0"
