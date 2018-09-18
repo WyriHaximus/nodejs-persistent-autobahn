@@ -1,5 +1,7 @@
 # Persistent Autobahn
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/WyriHaximus/nodejs-persistent-autobahn.svg)](https://greenkeeper.io/)
+
 [![Linux Build Status](https://travis-ci.org/WyriHaximus/nodejs-persistent-autobahn.png)](https://travis-ci.org/WyriHaximus/nodejs-persistent-autobahn)
 
 [![NPM](https://nodei.co/npm/persistent-autobahn.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/persistent-autobahn)
