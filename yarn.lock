@@ -923,9 +923,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-collections@~5.0.1:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/collections/-/collections-5.0.7.tgz#347e78bfe99d3e5a3864b6dfdc7bce4e401cbe54"
+collections@~5.1.5:
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/collections/-/collections-5.1.5.tgz#55b900799306d4fbd1c3587b1f400bf7db572d77"
   dependencies:
     weak-map "~1.0.x"
 
