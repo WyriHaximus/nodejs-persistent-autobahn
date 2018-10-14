@@ -27,7 +27,7 @@
     "jshint-loader": "~0.8.3",
     "json-loader": "^0.5.4",
     "mocha": "~5.2.0",
-    "sinon": "~6.3.4",
+    "sinon": "~7.0.0",
     "webpack": "^4.20.2"
   },
   "main": "index.js",
