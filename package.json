@@ -8,7 +8,7 @@
     "test": "mocha --compilers js:babel-core/register ./tests.js"
   },
   "dependencies": {
-    "autobahn": "~0.9.9",
+    "autobahn": "~18.10.1",
     "collections": "~5.1.5",
     "random-js": "^1.0.8",
     "when": "~3.7.3"
