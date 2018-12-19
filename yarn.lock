@@ -1121,8 +1121,8 @@ collection-visit@^1.0.0:
     object-visit "^1.0.0"
 
 collections@~5.1.5:
-  version "5.1.5"
-  resolved "https://registry.yarnpkg.com/collections/-/collections-5.1.5.tgz#55b900799306d4fbd1c3587b1f400bf7db572d77"
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/collections/-/collections-5.1.6.tgz#3eb75477907605a1d911fabd84e0783f4f054795"
   dependencies:
     weak-map "~1.0.x"
 
