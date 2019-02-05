@@ -2388,9 +2388,9 @@ jshint-loader@~0.8.3:
     rcloader "=0.1.2"
     strip-json-comments "0.1.x"
 
-jshint@~2.9.1:
-  version "2.9.7"
-  resolved "https://registry.yarnpkg.com/jshint/-/jshint-2.9.7.tgz#038a3fa5c328fa3ab03ddfd85df88d3d87bedcbd"
+jshint@~2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/jshint/-/jshint-2.10.0.tgz#3d6c054932c550df6ae90925cdc060b923e0c52e"
   dependencies:
     cli "~1.0.0"
     console-browserify "1.1.x"
