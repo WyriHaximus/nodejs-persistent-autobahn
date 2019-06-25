@@ -19,7 +19,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.0.15",
     "babel-preset-es2015": "^6.0.15",
     "chai": "~4.2.0",
-    "eslint": "~5.14.0",
+    "eslint": "~6.0.1",
     "eslint-plugin-smells": "^1.0.1",
     "jscs": "~3.0.3",
     "jscs-loader": "~0.3.0",
